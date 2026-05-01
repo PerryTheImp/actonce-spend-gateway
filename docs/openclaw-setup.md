@@ -127,7 +127,8 @@ If the gateway returns `REQUIRES_APPROVAL`, the agent should pause and inform yo
 |----------|----------|-------------|
 | `ACTONCE_POLICY_PATH` | Yes | Absolute path to your policy YAML file |
 | `ACTONCE_LOG_PATH` | No | Where to write decision logs. Defaults to `./logs/actonce-spend.log` |
-| `ACTONCE_DB_PATH` | No | Path to SQLite dedupe store. Defaults to `./data/actonce.db` |
+| `ACTONCE_DB_PATH` | No | Path to SQLite dedupe store. Defaults to `:memory:` |
+| `ACTONCE_QUEUE_PATH` | No | Path to approval queue JSON. Defaults to `./data/approval-queue.json` |
 | `ACTONCE_TELEGRAM_BOT_TOKEN` | No | For approval alerts. Free version supports one user / one channel |
 | `ACTONCE_TELEGRAM_CHAT_ID` | No | Target chat for Telegram alerts |
 
