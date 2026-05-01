@@ -1,0 +1,48 @@
+name: Integration Support
+description: Help with OpenClaw, Hermes, Stripe Link, or MCP setup
+labels: [integration, support]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Having trouble connecting the gateway to your agent framework? Fill in the details.
+
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Agent framework
+      options:
+        - OpenClaw
+        - Hermes
+        - Claude Code / MCP client
+        - Cursor
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Your MCP server config
+      description: Paste the relevant MCP server JSON or setup code
+      render: json
+    validations:
+      required: false
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is not working?
+      description: Describe the behaviour you are seeing
+      placeholder: |
+        When I run the agent, the check_spend call times out or returns an error.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or errors
+      render: shell
+    validations:
+      required: false
