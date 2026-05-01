@@ -208,7 +208,7 @@ h1, h2, h3, h4 {
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
 }
 
 .gradient-orb {
@@ -1160,4 +1160,37 @@ h1, h2, h3, h4 {
       transform: translateY(0);
     }
   }
+}
+
+/* Hero Video Background */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 26, 0.7) 0%,
+    rgba(10, 14, 26, 0.4) 50%,
+    rgba(10, 14, 26, 0.9) 100%
+  );
+  z-index: 1;
 }
