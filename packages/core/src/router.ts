@@ -54,7 +54,7 @@ export class DecisionRouter {
     });
   }
 
-  evaluate(request: SpendRequest): DecisionResult {
+  evaluate(request: SpendRequest, simulate?: boolean): DecisionResult {
     const startTime = Date.now();
     const reference = `actonce_txn_${uuidv4()}`;
     const timestamp = request.timestamp || new Date();
@@ -91,12 +91,12 @@ export class DecisionRouter {
     const timeToDecision = Date.now() - startTime;
 
     // If requires approval, queue it
-    if (finalDecision === 'REQUIRES_APPROVAL') {
+    if (finalDecision === 'REQUIRES_APPROVAL' && !simulate) {
       this.approvalQueue.add(request, reference, finalReason);
     }
 
-    // Record in dedupe store (only if not rejected due to duplicate)
-    if (dedupeMatch.status !== 'duplicate') {
+    // Record in dedupe store (only if not rejected due to duplicate, and not simulating)
+    if (dedupeMatch.status !== 'duplicate' && !simulate) {
       this.dedupe.record(request, reference, timestamp);
     }
 
@@ -111,8 +111,9 @@ export class DecisionRouter {
       timeToDecisionMs: timeToDecision,
     };
 
-    // Log the decision
-    const logEntry: LogEntry = {
+    // Log the decision (skip if simulating)
+    if (!simulate) {
+      const logEntry: LogEntry = {
       timestamp: timestamp.toISOString(),
       transactionReference: reference,
       requestId: request.requestId,
@@ -131,7 +132,8 @@ export class DecisionRouter {
       timeToDecisionMs: timeToDecision,
     };
 
-    this.logger.log(logEntry);
+      this.logger.log(logEntry);
+    }
 
     return result;
   }
@@ -194,6 +196,22 @@ export class DecisionRouter {
 
   getPolicy(): PolicyConfig {
     return this.policy;
+  }
+
+  logSpendResult(reference: string, status: 'completed' | 'failed', paymentMethod?: string, receiptUrl?: string, notes?: string): void {
+    const entry: LogEntry = {
+      timestamp: new Date().toISOString(),
+      transactionReference: reference,
+      decision: status === 'completed' ? 'APPROVED' : 'REJECTED',
+      amount: 0,
+      currency: '',
+      merchant: '',
+      policyMatched: 'log_spend_result',
+      policyReason: notes || `Payment ${status}${paymentMethod ? ` via ${paymentMethod}` : ''}${receiptUrl ? ` receipt: ${receiptUrl}` : ''}`,
+      dedupeStatus: 'new',
+      timeToDecisionMs: 0,
+    };
+    this.logger.log(entry);
   }
 
   close(): void {

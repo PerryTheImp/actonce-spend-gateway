@@ -1,11 +1,29 @@
 {
-  "files": [],
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": ".",
+    "paths": {
+      "@actonce/types": ["./packages/types/src/index.ts"],
+      "@actonce/policy": ["./packages/policy/src/index.ts"],
+      "@actonce/dedupe": ["./packages/dedupe/src/index.ts"],
+      "@actonce/logger": ["./packages/logger/src/index.ts"],
+      "@actonce/approval": ["./packages/approval/src/index.ts"],
+      "@actonce/core": ["./packages/core/src/index.ts"],
+      "@actonce/cli": ["./packages/cli/src/index.ts"],
+      "@actonce/mcp-server": ["./packages/mcp-server/src/index.ts"]
+    }
+  },
+  "include": [],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "vitest.config.ts"],
   "references": [
     { "path": "./packages/types" },
     { "path": "./packages/policy" },
     { "path": "./packages/dedupe" },
     { "path": "./packages/logger" },
     { "path": "./packages/approval" },
-    { "path": "./packages/core" }
+    { "path": "./packages/core" },
+    { "path": "./packages/cli" },
+    { "path": "./packages/mcp-server" }
   ]
 }
