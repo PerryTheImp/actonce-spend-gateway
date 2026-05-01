@@ -1,5 +1,8 @@
 # Give AI Agents Spending Power Without Losing Control
 
+[![CI](https://github.com/PerryTheImp/actonce-spend-gateway/actions/workflows/main.yml/badge.svg)](https://github.com/PerryTheImp/actonce-spend-gateway/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **TL;DR:** ActOnce Spend Gateway is an open-source decision layer that sits between your AI agents and payment flows. It checks every spend request against a local policy file, blocks duplicates, and routes high-risk purchases to human approval. The gateway never touches payment credentials — it only says yes, no, or "wait for approval." Install it locally, define your rules in YAML, and let your agents spend within guardrails.
 
 ---
