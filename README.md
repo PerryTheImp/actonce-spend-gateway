@@ -24,6 +24,8 @@ npm install -g @actonce/spend-gateway
 actonce-spend init
 ```
 
+![CLI Demo](docs/demo.gif)
+
 Edit `actonce-policy.yaml` to set your limits. Then start the MCP server:
 
 ```bash
