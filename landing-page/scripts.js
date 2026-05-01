@@ -1,6 +1,12 @@
 // ActOnce Spend Gateway — Landing Page Scripts
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Slow down hero video to 50% speed
+  const heroVideo = document.querySelector('.hero-video-bg video');
+  if (heroVideo) {
+    heroVideo.playbackRate = 0.5;
+  }
+
   // FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-item');
   
