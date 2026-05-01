@@ -33,5 +33,9 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bin": {
+    "actonce-spend": "./packages/cli/dist/index.js",
+    "actonce-spend-mcp": "./packages/mcp-server/dist/index.js"
+  }
 }
