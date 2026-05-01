@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/types" },
+    { "path": "./packages/policy" },
+    { "path": "./packages/dedupe" },
+    { "path": "./packages/logger" },
+    { "path": "./packages/approval" },
+    { "path": "./packages/core" }
+  ]
+}

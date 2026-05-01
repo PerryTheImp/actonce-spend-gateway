@@ -1,0 +1,103 @@
+version: "1.0"
+default_mode: auto_approve
+currency: USD
+
+# Amount controls
+max_single_purchase: 200.00
+max_daily_spend: 1000.00
+max_monthly_spend: 5000.00
+
+# Approval thresholds
+require_human_approval_above: 100.00
+always_require_approval_for:
+  - crypto
+  - gambling
+  - adult
+  - weapons
+
+# Merchant controls
+allowed_merchants:
+  - github.com
+  - gitlab.com
+  - npmjs.com
+  - docker.com
+  - kubernetes.io
+  - terraform.io
+  - vaultproject.io
+  - consul.io
+  - nginx.com
+  - cloudflare.com
+  - fastly.com
+  - aws.amazon.com
+  - azure.microsoft.com
+  - cloud.google.com
+  - digitalocean.com
+  - linode.com
+  - vultr.com
+  - heroku.com
+  - vercel.com
+  - netlify.com
+  - railway.app
+  - render.com
+  - fly.io
+  - supabase.com
+  - planetscale.com
+  - cockroachlabs.com
+  - redis.io
+  - mongodb.com
+  - elasticsearch.org
+  - grafana.com
+  - sentry.io
+  - datadog.com
+  - newrelic.com
+  - letsencrypt.org
+
+blocked_merchants: []
+
+trusted_merchants:
+  - github.com
+  - docker.com
+  - npmjs.com
+  - vercel.com
+
+# Category controls
+allowed_categories:
+  - software
+  - hosting
+  - tools
+  - development
+  - saas
+  - subscriptions
+  - infrastructure
+  - domains
+  - security
+blocked_categories:
+  - gambling
+  - crypto
+  - adult
+  - weapons
+  - personal
+  - entertainment
+
+# Time controls
+allowed_hours:
+  start: "00:00"
+  end: "23:59"
+timezone: "UTC"
+
+# Duplicate prevention
+dedupe_window_minutes: 30
+dedupe_match_on:
+  - amount
+  - currency
+  - merchant
+  - agent_id
+
+# Agent/task controls
+max_requests_per_agent_per_hour: 100
+max_requests_per_task: 50
+
+# Logging
+log_level: debug
+log_destination: file
+log_path: ./logs/actonce-developer.log

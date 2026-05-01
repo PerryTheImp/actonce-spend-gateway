@@ -1,0 +1,93 @@
+version: "1.0"
+default_mode: auto_approve
+currency: USD
+
+# Amount controls
+max_single_purchase: 500.00
+max_daily_spend: 2000.00
+max_monthly_spend: 10000.00
+
+# Approval thresholds
+require_human_approval_above: 200.00
+always_require_approval_for:
+  - crypto
+  - gambling
+  - adult
+  - weapons
+  - high_value
+
+# Merchant controls
+allowed_merchants:
+  - shopify.com
+  - bigcommerce.com
+  - woocommerce.com
+  - stripe.com
+  - paypal.com
+  - squareup.com
+  - amazon.com
+  - ebay.com
+  - etsy.com
+  - alibaba.com
+  - dhgate.com
+  - shein.com
+  - boohoo.com
+  - nordstrom.com
+  - macys.com
+  - target.com
+  - walmart.com
+  - homedepot.com
+  - lowes.com
+  - grainger.com
+  - digikey.com
+  - mouser.com
+  - rockauto.com
+  - autozone.com
+  - discounttire.com
+
+blocked_merchants:
+  - unknown-merchant.com
+
+trusted_merchants:
+  - shopify.com
+  - stripe.com
+  - amazon.com
+
+# Category controls
+allowed_categories:
+  - inventory
+  - shipping
+  - packaging
+  - software
+  - tools
+  - marketing
+  - advertising
+  - saas
+  - subscriptions
+blocked_categories:
+  - gambling
+  - crypto
+  - adult
+  - weapons
+  - personal
+
+# Time controls
+allowed_hours:
+  start: "00:00"
+  end: "23:59"
+timezone: "America/New_York"
+
+# Duplicate prevention
+dedupe_window_minutes: 60
+dedupe_match_on:
+  - amount
+  - currency
+  - merchant
+
+# Agent/task controls
+max_requests_per_agent_per_hour: 50
+max_requests_per_task: 20
+
+# Logging
+log_level: info
+log_destination: file
+log_path: ./logs/actonce-ecommerce.log

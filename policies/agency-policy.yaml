@@ -1,0 +1,115 @@
+version: "1.0"
+default_mode: ask
+currency: GBP
+
+# Amount controls
+max_single_purchase: 100.00
+max_daily_spend: 500.00
+max_monthly_spend: 2000.00
+
+# Approval thresholds
+require_human_approval_above: 50.00
+always_require_approval_for:
+  - crypto
+  - gambling
+  - adult
+  - weapons
+  - personal
+
+# Merchant controls
+allowed_merchants:
+  - namecheap.com
+  - amazon.co.uk
+  - canva.com
+  - github.com
+  - vercel.com
+  - cloudflare.com
+  - mailchimp.com
+  - mailerlite.com
+  - sendgrid.com
+  - semrush.com
+  - ahrefs.com
+  - google.com
+  - facebook.com
+  - linkedin.com
+  - twitter.com
+  - tiktok.com
+  - wordpress.com
+  - shopify.com
+  - bigcommerce.com
+  - woocommerce.com
+  - laravel.com
+  - nextjs.org
+  - strapi.io
+  - contentful.com
+  - sanity.io
+  - mongodb.com
+  - supabase.com
+  - firebase.google.com
+  - aws.amazon.com
+  - digitalocean.com
+  - linode.com
+  - vultr.com
+  - hetzner.com
+  - godaddy.com
+  - cloudflare.com
+  - stripe.com
+  - paypal.com
+  - letsencrypt.org
+
+blocked_merchants:
+  - justeat.co.uk
+  - deliveroo.co.uk
+  - ubereats.com
+  - netflix.com
+  - spotify.com
+
+trusted_merchants:
+  - namecheap.com
+  - github.com
+  - vercel.com
+  - cloudflare.com
+
+# Category controls
+allowed_categories:
+  - domains
+  - software
+  - hosting
+  - tools
+  - marketing
+  - advertising
+  - design
+  - development
+  - saas
+  - subscriptions
+blocked_categories:
+  - gambling
+  - crypto
+  - adult
+  - weapons
+  - personal
+  - entertainment
+  - food
+  - travel
+
+# Time controls
+allowed_hours:
+  start: "07:00"
+  end: "23:00"
+timezone: "Europe/London"
+
+# Duplicate prevention
+dedupe_window_minutes: 15
+dedupe_match_on:
+  - amount
+  - currency
+  - merchant
+
+# Agent/task controls
+max_requests_per_agent_per_hour: 20
+max_requests_per_task: 5
+
+# Logging
+log_level: info
+log_destination: file
+log_path: ./logs/actonce-agency.log
