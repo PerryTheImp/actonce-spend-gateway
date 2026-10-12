@@ -12,7 +12,7 @@ describe('MCP Server Tools', () => {
   beforeEach(() => {
     tmpDir = mkdtempSync(join(tmpdir(), 'actonce-mcp-test-'));
     const routerConfig: GatewayConfig = {
-      policyPath: './policies/starter-policy.yaml',
+      policyPath: './policies/test-policy.yaml',
       dbPath: ':memory:',
       logDestination: 'stdout',
       queuePath: join(tmpDir, 'approval-queue.json'),
@@ -35,7 +35,7 @@ describe('MCP Server Tools', () => {
       agentId: toolArgs.agent_id ? String(toolArgs.agent_id) : undefined,
       taskId: toolArgs.task_id ? String(toolArgs.task_id) : undefined,
       requestId: toolArgs.request_id ? String(toolArgs.request_id) : undefined,
-      timestamp: new Date('2026-05-01T12:00:00Z'),
+      timestamp: new Date(),
     };
 
     const simulate = Boolean(toolArgs.simulate);
@@ -148,7 +148,7 @@ describe('MCP Server Tools', () => {
   it('preview_policy returns policy summary', async () => {
     const parsed = await handlePreviewPolicy();
     expect(parsed.version).toBe('1.0');
-    expect(parsed.currency).toBe('GBP');
+    expect(parsed.currency).toBe('USD');
     expect(parsed.max_single_purchase).toBe(50);
   });
 

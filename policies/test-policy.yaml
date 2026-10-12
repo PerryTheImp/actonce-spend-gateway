@@ -1,0 +1,54 @@
+# Test policy — permissive on time/hours so tests don't depend on clock.
+# Mirrors starter-policy.yaml structure but disables time-window blocking.
+# Used by packages/core and packages/mcp-server test suites only.
+version: "1.0"
+default_mode: ask
+currency: USD
+
+# Amount controls
+max_single_purchase: 50.00
+max_daily_spend: 200.00
+max_monthly_spend: 1000.00
+
+# Approval thresholds
+require_human_approval_above: 25.00
+always_require_approval_for:
+  - crypto
+  - gambling
+  - adult
+  - weapons
+
+# Merchant controls
+allowed_merchants: []
+blocked_merchants: []
+trusted_merchants: []
+
+# Category controls
+allowed_categories: []
+blocked_categories:
+  - gambling
+  - crypto
+  - adult
+  - weapons
+
+# Time controls — 24/7 so tests pass regardless of clock.
+allowed_hours:
+  start: "00:00"
+  end: "23:59"
+timezone: "UTC"
+
+# Duplicate prevention
+dedupe_window_minutes: 30
+dedupe_match_on:
+  - amount
+  - currency
+  - merchant
+
+# Agent/task controls
+max_requests_per_agent_per_hour: 10
+max_requests_per_task: 3
+
+# Logging
+log_level: info
+log_destination: file
+log_path: ./logs/actonce-spend.log

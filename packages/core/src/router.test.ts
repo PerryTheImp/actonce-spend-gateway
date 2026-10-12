@@ -12,7 +12,7 @@ describe('Decision Router', () => {
   beforeEach(() => {
     tmpDir = mkdtempSync(join(tmpdir(), 'actonce-test-'));
     router = new DecisionRouter({
-      policyPath: './policies/starter-policy.yaml',
+      policyPath: './policies/test-policy.yaml',
       dbPath: ':memory:',
       logDestination: 'stdout',
       queuePath: join(tmpDir, 'approval-queue.json'),
@@ -32,7 +32,7 @@ describe('Decision Router', () => {
     reason: 'Register domain',
     agentId: 'agent-001',
     requestId: 'req-001',
-    timestamp: new Date('2026-05-01T12:00:00Z'),
+    timestamp: new Date(),
   };
 
   it('should APPROVE a small purchase', () => {
