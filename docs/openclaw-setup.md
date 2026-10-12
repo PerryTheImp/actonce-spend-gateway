@@ -68,7 +68,7 @@ You should see:
 Ask your agent to run a dry-run spend check:
 
 ```
-Use the actonce-spend tool to simulate a check_spend for £14.99 at namecheap.com for a domain purchase.
+Use the actonce-spend tool to simulate a check_spend for $14.99 at namecheap.com for a domain purchase.
 ```
 
 The agent should call `check_spend` with `--simulate` (or the agent can pass `"simulate": true` in the arguments if supported).
@@ -104,7 +104,7 @@ If approved, your agent can then proceed to call Stripe Link CLI (or whatever pa
 Here is what a complete spend flow looks like from OpenClaw:
 
 ```
-Agent: I need to buy a domain for £14.99 at namecheap.com.
+Agent: I need to buy a domain for $14.99 at namecheap.com.
   → Calls check_spend
   ← Gateway returns APPROVED with transaction_reference: actonce_txn_001
 

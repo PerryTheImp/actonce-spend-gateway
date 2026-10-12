@@ -652,68 +652,6 @@ h1, h2, h3, h4 {
   color: var(--text-secondary);
 }
 
-/* Testimonial */
-.testimonial {
-  padding: 120px 0;
-  background: var(--bg-secondary);
-}
-
-.testimonial-card {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  text-align: center;
-}
-
-.testimonial-quote {
-  margin-bottom: 32px;
-}
-
-.testimonial-quote svg {
-  color: var(--accent-primary);
-  margin-bottom: 24px;
-}
-
-.testimonial-quote blockquote {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--text-primary);
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-
-.author-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--accent-gradient);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: white;
-}
-
-.author-name {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.author-title {
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
 /* Install */
 .install {
   padding: 120px 0;
@@ -1125,14 +1063,6 @@ h1, h2, h3, h4 {
   
   .footer-links {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .testimonial-card {
-    padding: 32px;
-  }
-  
-  .testimonial-quote blockquote {
-    font-size: 18px;
   }
   
   .install-card {

@@ -32,7 +32,7 @@ Policy files are YAML. The gateway loads them at startup. Changes require a rest
 - **Type:** string (ISO 4217 code)
 - **Required:** yes
 - **Description:** Default currency for amount comparisons and limits. Requests in other currencies are converted if a rate source is available; otherwise they may be rejected.
-- **Example:** `currency: GBP`
+- **Example:** `currency: USD`
 
 ---
 
@@ -264,7 +264,7 @@ Rules are checked in this order. The first matching rule wins:
 ```yaml
 version: "1.0"
 default_mode: ask
-currency: GBP
+currency: USD
 
 max_single_purchase: 100.00
 max_daily_spend: 500.00

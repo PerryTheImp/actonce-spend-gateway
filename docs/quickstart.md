@@ -40,7 +40,7 @@ Open `actonce-policy.yaml` and set your basics:
 ```yaml
 version: "1.0"
 default_mode: ask
-currency: GBP
+currency: USD
 
 max_single_purchase: 50.00
 max_daily_spend: 200.00
@@ -68,7 +68,7 @@ Save and close.
 ```bash
 actonce-spend check \
   --amount 14.99 \
-  --currency GBP \
+  --currency USD \
   --merchant namecheap.com \
   --reason "Test domain purchase" \
   --simulate
@@ -94,7 +94,7 @@ Remove `--simulate`:
 ```bash
 actonce-spend check \
   --amount 14.99 \
-  --currency GBP \
+  --currency USD \
   --merchant namecheap.com \
   --reason "Domain for client project"
 ```
@@ -110,7 +110,7 @@ Try an amount above your threshold:
 ```bash
 actonce-spend check \
   --amount 149.99 \
-  --currency GBP \
+  --currency USD \
   --merchant aws.amazon.com \
   --reason "EC2 instance for testing"
 ```

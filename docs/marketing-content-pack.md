@@ -199,7 +199,7 @@ So I built ActOnce Spend Gateway. Here is how it works under the hood:
 
 **Policy engine:** Loads a YAML file and evaluates 11 decision rules in sequence. Blocked merchant? Reject immediately. Over budget? Queue for approval. Duplicate detected? Block or warn.
 
-**Duplicate detector:** SQLite-backed with configurable match keys. Detects identical spends within a time window. Prevents the £14.99 Namecheap domain from being bought twice in 30 minutes.
+**Duplicate detector:** SQLite-backed with configurable match keys. Detects identical spends within a time window. Prevents the $14.99 Namecheap domain from being bought twice in 30 minutes.
 
 **Approval queue:** File-based for local dev, with optional Telegram webhook. When a spend needs human approval, the owner gets a ping. Tap yes or no. Done.
 
@@ -230,7 +230,7 @@ I run a local SEO agency. We build rank-and-rent sites, manage citations, and ha
 Now my OpenClaw agent handles it. Here is the policy I set:
 
 ```yaml
-currency: GBP
+currency: USD
 max_single_purchase: 50.00
 require_human_approval_above: 25.00
 allowed_merchants:
@@ -240,9 +240,9 @@ trusted_merchants:
 dedupe_window_minutes: 30
 ```
 
-Under £25 at Namecheap? Auto-approved. The agent buys the domain, logs the transaction, and moves on.
+Under $25 at Namecheap? Auto-approved. The agent buys the domain, logs the transaction, and moves on.
 
-Over £25? I get a Telegram message. Tap approve. Done.
+Over $25? I get a Telegram message. Tap approve. Done.
 
 Same domain twice in 30 minutes? Blocked. The agent gets a clear rejection and tries a different name.
 
@@ -358,7 +358,7 @@ With text: *Works with the tools you already use.*
 
 | | Free | Pro | Team | Business |
 |---|---|---|---|---|
-| | Open Source | £19/mo | £79/mo | £249/mo |
+| | Open Source | $24/mo | $99/mo | $299/mo |
 | Policy engine | ✅ | ✅ | ✅ | ✅ |
 | MCP server + CLI | ✅ | ✅ | ✅ | ✅ |
 | Duplicate detection | ✅ | ✅ | ✅ | ✅ |

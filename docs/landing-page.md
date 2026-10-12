@@ -27,7 +27,7 @@ An open-source spending gateway that sits between your agents and Stripe Link. D
 You hooked your agent up to Stripe Link. Now it can buy domains, upgrade SaaS plans, and spin up cloud instances. That is power without guardrails. One prompt injection or logic loop and your card gets hammered.
 
 ### Prompts Are Not Policies
-Telling your agent "do not spend more than £50" in a system prompt is not enforcement. It is a suggestion. You need hard rules that the agent cannot override.
+Telling your agent "do not spend more than $50" in a system prompt is not enforcement. It is a suggestion. You need hard rules that the agent cannot override.
 
 ### You Cannot Scale If You Are the Bottleneck
 Every purchase request lands in your inbox. You become the approval layer. That defeats the point of automation.
@@ -81,7 +81,7 @@ Works where your agents already live.
 
 | Plan | Free | Pro | Team | Business |
 |------|------|-----|------|----------|
-| Price | £0 | £19/mo | £79/mo | £249/mo |
+| Price | $0 | $24/mo | $99/mo | $299/mo |
 | Local policy engine | Yes | Yes | Yes | Yes |
 | MCP server + CLI | Yes | Yes | Yes | Yes |
 | Duplicate detection | Yes | Yes | Yes | Yes |

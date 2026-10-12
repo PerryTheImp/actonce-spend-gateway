@@ -55,7 +55,7 @@ Before involving the gateway, make sure Stripe Link CLI works on its own:
 ```bash
 stripe link pay \
   --amount 100 \
-  --currency gbp \
+  --currency usd \
   --description "Test payment"
 ```
 
@@ -72,7 +72,7 @@ Your agent now has a two-step spend process:
 ```bash
 actonce-spend check \
   --amount 14.99 \
-  --currency GBP \
+  --currency USD \
   --merchant namecheap.com \
   --reason "Domain for client project"
 ```
@@ -92,12 +92,12 @@ Once approved, call Stripe Link CLI:
 ```bash
 stripe link pay \
   --amount 1499 \
-  --currency gbp \
+  --currency usd \
   --description "Domain for client project" \
   --metadata actonce_txn=actonce_txn_abc123
 ```
 
-**Note:** Stripe Link CLI amounts are in the smallest currency unit (pence for GBP, cents for USD). £14.99 becomes `1499`.
+**Note:** Stripe Link CLI amounts are in the smallest currency unit (cents for USD). $14.99 becomes `1499`.
 
 The `--metadata` tag links the Stripe payment back to the gateway transaction reference. This is optional but recommended.
 
@@ -174,7 +174,7 @@ function spend(amount, currency, merchant, reason):
 - This is expected. The gateway checks policy, not your card balance. Log the failure and retry or escalate.
 
 **Currency mismatch**
-- The gateway accepts `"GBP"` or `"USD"`. Stripe Link CLI may need `--currency gbp` (lowercase). Match them carefully.
+- The gateway accepts `"GBP"` or `"USD"`. Stripe Link CLI may need `--currency usd` (lowercase). Match them carefully.
 
 **Amount off by 100x**
 - Stripe uses minor units. The gateway uses decimal amounts. Convert before calling Stripe.

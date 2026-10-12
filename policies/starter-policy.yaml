@@ -1,6 +1,6 @@
 version: "1.0"
 default_mode: ask
-currency: GBP
+currency: USD
 
 # Amount controls
 max_single_purchase: 50.00

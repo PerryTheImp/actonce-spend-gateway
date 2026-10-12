@@ -46,10 +46,10 @@ actonce-spend start --mcp
 ## Use Cases
 
 ### Domain Buying
-Your SEO agent needs to register client domains on demand. Policy: allow up to £50 per purchase at Namecheap, auto-approve under £25, require approval above that. No more waiting for you to manually buy domains.
+Your SEO agent needs to register client domains on demand. Policy: allow up to $50 per purchase at Namecheap, auto-approve under $25, require approval above that. No more waiting for you to manually buy domains.
 
 ### SaaS Subscriptions
-Your agent spots a tool trial that needs upgrading to a paid plan. Policy: software category allowed, monthly spend cap at £200, blocked merchants list keeps out sketchy vendors. The agent handles the grunt work; you keep the guardrails.
+Your agent spots a tool trial that needs upgrading to a paid plan. Policy: software category allowed, monthly spend cap at $200, blocked merchants list keeps out sketchy vendors. The agent handles the grunt work; you keep the guardrails.
 
 ### Local SEO Agents
 A fleet of local SEO agents needs to pay for citation submissions, review tools, or directory listings. Policy: per-agent hourly limits, task-level spend caps, and duplicate detection so the same listing never gets paid for twice. Scale without surprises.
@@ -61,7 +61,7 @@ A fleet of local SEO agents needs to pay for citation submissions, review tools,
 ```yaml
 version: "1.0"
 default_mode: ask
-currency: GBP
+currency: USD
 
 max_single_purchase: 50.00
 max_daily_spend: 200.00
@@ -120,7 +120,7 @@ log_path: ./logs/actonce-spend.log
 # Check a spend (dry run — no logging)
 actonce-spend check \
   --amount 14.99 \
-  --currency GBP \
+  --currency USD \
   --merchant namecheap.com \
   --reason "Domain for client project" \
   --simulate
@@ -128,7 +128,7 @@ actonce-spend check \
 # Check a spend for real
 actonce-spend check \
   --amount 14.99 \
-  --currency GBP \
+  --currency USD \
   --merchant namecheap.com \
   --reason "Domain for client project"
 
@@ -184,7 +184,7 @@ See [`docs/openclaw-setup.md`](docs/openclaw-setup.md) for the full walkthrough.
 | Advanced fraud signals | No | Yes |
 | Priority support | No | Yes |
 
-**Pro:** £19/month per user. **Team:** £79/month. **Business:** £249/month. [View plans](https://actonceapi.com/pricing)
+**Pro:** $24/month per user. **Team:** $99/month. **Business:** $299/month. [View plans](https://actonceapi.com/pricing)
 
 ---
 

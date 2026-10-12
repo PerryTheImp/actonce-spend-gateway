@@ -3,13 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ActOnce Spend Gateway — Safe Spending Controls for AI Agents</title>
-    <meta name="description" content="Open-source spending controls for AI agents. Policy-driven, not prompt-driven. Local-first. MIT licensed.">
+    <title>ActOnce Spend Gateway — Spending Controls for AI Agents | Open Source</title>
+    <meta name="description" content="Policy-driven spending controls for AI agents. Local-first, zero credential exposure, MIT licensed. Install with one npm command. Works with Claude Code, Cursor, OpenClaw, and any MCP agent.">
+    <link rel="canonical" href="https://spend.actonceapi.com/">
+    <meta name="theme-color" content="#6366f1">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ActOnce Spend Gateway">
+    <meta property="og:title" content="ActOnce Spend Gateway — Spending Controls for AI Agents">
+    <meta property="og:description" content="Policy-driven spending controls for AI agents. Local-first, zero credential exposure, MIT licensed.">
+    <meta property="og:url" content="https://spend.actonceapi.com/">
+    <meta property="og:image" content="https://spend.actonceapi.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ActOnce Spend Gateway — Spending Controls for AI Agents">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ActOnce Spend Gateway — Spending Controls for AI Agents">
+    <meta name="twitter:description" content="Policy-driven spending controls for AI agents. Local-first, zero credential exposure, MIT licensed.">
+    <meta name="twitter:image" content="https://spend.actonceapi.com/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ActOnce Spend Gateway",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "macOS, Linux, Windows (Node.js)",
+          "description": "Open-source spending controls for AI agents. Policy-driven, not prompt-driven. Local-first, zero credential exposure.",
+          "url": "https://spend.actonceapi.com/",
+          "downloadUrl": "https://www.npmjs.com/package/@actonce/spend-gateway",
+          "softwareVersion": "1.0.0",
+          "license": "https://opensource.org/licenses/MIT",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "ActOnce",
+            "url": "https://actonceapi.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type":"Question","name":"Does this handle payments?","acceptedAnswer":{"@type":"Answer","text":"No. The gateway is a decision engine only. It says yes, no, or wait. Stripe Link CLI or your preferred payment method handles the actual transaction."}},
+            {"@type":"Question","name":"Do I need to send data to the cloud?","acceptedAnswer":{"@type":"Answer","text":"No. The open-source version is entirely local. Policy files, logs, and the dedupe database live on your machine. No API keys, no external services."}},
+            {"@type":"Question","name":"Which agents does this work with?","acceptedAnswer":{"@type":"Answer","text":"Any MCP-compatible agent. Tested with OpenClaw and Hermes. Works with Claude Code, Cursor, and any framework that supports the Model Context Protocol."}},
+            {"@type":"Question","name":"What if I want team controls?","acceptedAnswer":{"@type":"Answer","text":"The Pro version adds a hosted dashboard with multi-user approval routing, team analytics, and advanced policy templates. Join the waitlist to be notified when it launches."}},
+            {"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"The core gateway is open source under MIT license. You can use it, modify it, and redistribute it. The hosted Pro dashboard is a paid SaaS product for teams who need multi-user features."}}
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -105,7 +158,7 @@
     <!-- Social Proof -->
     <section class="social-proof">
         <div class="container">
-            <p class="proof-label">Trusted by developers building with</p>
+            <p class="proof-label">Works with</p>
             <div class="proof-logos">
                 <div class="proof-logo">OpenClaw</div>
                 <div class="proof-logo">Hermes</div>
@@ -182,7 +235,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">The Problem</span>
-                <h2 class="section-title">Prompts Are Not Controls</h2>
+                <h2 class="section-title">Words Aren't Guardrails</h2>
             </div>
             <div class="pain-grid">
                 <div class="pain-card">
@@ -202,7 +255,7 @@
                             <path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h3>Prompts Are Not Controls</h3>
+                    <h3>Prompts Get Forgotten</h3>
                     <p>"Please be careful with spending" is not a safety mechanism. It is a suggestion that an agent can ignore, misinterpret, or forget across sessions.</p>
                 </div>
                 <div class="pain-card">
@@ -263,30 +316,6 @@ dedupe_window_minutes: 30</code></pre>
                     <span class="feature-tag">Privacy</span>
                     <h3>Zero Credential Exposure</h3>
                     <p>The gateway never sees your card, your token, or your Stripe credentials. It only emits decisions: APPROVED, REJECTED, or REQUIRES_APPROVAL.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial -->
-    <section class="testimonial">
-        <div class="container">
-            <div class="testimonial-card">
-                <div class="testimonial-quote">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                        <path d="M14 24c0-5.523 4.477-10 10-10v-4c-7.732 0-14 6.268-14 14v10h14V24H14z" fill="currentColor" opacity="0.2"/>
-                        <path d="M30 24c0-5.523 4.477-10 10-10v-4c-7.732 0-14 6.268-14 14v10h14V24H30z" fill="currentColor" opacity="0.2"/>
-                    </svg>
-                    <blockquote>
-                        I gave my OpenClaw agent a wallet and guardrails. Now it handles domain purchases, SaaS renewals, and SEO tool subscriptions — all within budget, all with proof.
-                    </blockquote>
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">P</div>
-                    <div class="author-info">
-                        <div class="author-name">Perry</div>
-                        <div class="author-title">Founder, ActOnce</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -366,7 +395,7 @@ dedupe_window_minutes: 30</code></pre>
                 <div class="pricing-card pricing-free">
                     <div class="pricing-header">
                         <h3>Free</h3>
-                        <div class="pricing-price">£0<span>/month</span></div>
+                        <div class="pricing-price">$0<span>/month</span></div>
                         <p>Open source. Self-hosted.</p>
                     </div>
                     <ul class="pricing-features">
@@ -384,7 +413,7 @@ dedupe_window_minutes: 30</code></pre>
                     <div class="pricing-badge">Coming Soon</div>
                     <div class="pricing-header">
                         <h3>Pro</h3>
-                        <div class="pricing-price">£19<span>/month</span></div>
+                        <div class="pricing-price">$24<span>/month</span></div>
                         <p>For solo builders.</p>
                     </div>
                     <ul class="pricing-features">
@@ -400,7 +429,7 @@ dedupe_window_minutes: 30</code></pre>
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Team</h3>
-                        <div class="pricing-price">£79<span>/month</span></div>
+                        <div class="pricing-price">$99<span>/month</span></div>
                         <p>For agencies and startups.</p>
                     </div>
                     <ul class="pricing-features">
@@ -416,7 +445,7 @@ dedupe_window_minutes: 30</code></pre>
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Business</h3>
-                        <div class="pricing-price">£249<span>/month</span></div>
+                        <div class="pricing-price">$299<span>/month</span></div>
                         <p>For production use.</p>
                     </div>
                     <ul class="pricing-features">
@@ -510,13 +539,13 @@ dedupe_window_minutes: 30</code></pre>
                     <p>Join the developers building safer agentic commerce.</p>
                 </div>
                 <div class="cta-buttons">
-                    <a href="https://github.com/PerryTheImp/actonce-spend-gateway" class="btn btn-large btn-primary">
+                    <a href="https://github.com/PerryTheImp/actonce-spend-gateway" target="_blank" rel="noopener" class="btn btn-large btn-primary">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                         Star on GitHub
                     </a>
-                    <a href="#install" class="btn btn-large btn-secondary">Install Now</a>
+                    <a href="https://github.com/PerryTheImp/actonce-spend-gateway#quick-install" target="_blank" rel="noopener" class="btn btn-large btn-secondary">View Install Guide</a>
                 </div>
             </div>
             
@@ -588,12 +617,12 @@ dedupe_window_minutes: 30</code></pre>
                 <p>2026 ActOnce. MIT License. Built with intent.</p>
                 <div class="social-share">
                     <span>Share:</span>
-                    <a href="https://x.com/intent/tweet?url=https://actonceapi.com&text=ActOnce%20Spend%20Gateway%20-%20Safe%20spending%20controls%20for%20AI%20agents" target="_blank" rel="noopener" class="social-btn" aria-label="Share on X">
+                    <a href="https://x.com/intent/tweet?url=https://spend.actonceapi.com&text=ActOnce%20Spend%20Gateway%20-%20policy-driven%20spending%20controls%20for%20AI%20agents%20(MIT%20%F0%9F%9A%80)" target="_blank" rel="noopener" class="social-btn" aria-label="Share on X">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://actonceapi.com" target="_blank" rel="noopener" class="social-btn" aria-label="Share on LinkedIn">
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://spend.actonceapi.com" target="_blank" rel="noopener" class="social-btn" aria-label="Share on LinkedIn">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>

@@ -35,7 +35,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           type: 'object',
           properties: {
             amount: { type: 'number', description: 'Amount to spend' },
-            currency: { type: 'string', description: 'Currency code (e.g. GBP)' },
+            currency: { type: 'string', description: 'Currency code (e.g. USD)' },
             merchant: { type: 'string', description: 'Merchant domain or name' },
             category: { type: 'string', description: 'Spend category (e.g. domains, software)' },
             reason: { type: 'string', description: 'Human-readable reason for spend' },

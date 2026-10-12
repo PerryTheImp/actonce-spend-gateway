@@ -3,7 +3,7 @@ import { writeFileSync, existsSync, mkdirSync } from 'fs';
 
 const starterPolicy = `version: "1.0"
 default_mode: ask
-currency: GBP
+currency: USD
 
 # Amount controls
 max_single_purchase: 50.00
@@ -79,5 +79,5 @@ export const initCommand = new Command('init')
 
     console.log('Done. Edit actonce-policy.yaml to match your needs, then run:');
     console.log('  export ACTONCE_POLICY_PATH="' + policyPath + '"');
-    console.log('  actonce-spend check --amount 14.99 --currency GBP --merchant namecheap.com --simulate');
+    console.log('  actonce-spend check --amount 14.99 --currency USD --merchant namecheap.com --simulate');
   });
