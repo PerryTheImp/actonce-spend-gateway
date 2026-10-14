@@ -38,16 +38,6 @@ The first public release of ActOnce Spend Gateway — an open-source spending co
 - `actonce-spend reject <reference> --reason` — rejects queued request
 - `actonce-spend logs` — with `--last`, `--agent-id`, `--merchant`, `--decision` filters
 
-### Landing Page (Phase 3)
-- Premium dark-themed responsive landing page
-- Animated hero video background
-- Interactive demo terminal
-- FAQ accordion
-- Pricing table (Free/Pro/Team/Business)
-- Social share buttons (X, LinkedIn, GitHub)
-- Copy-to-clipboard install commands
-- Mobile-responsive with hamburger menu
-
 ### Infrastructure
 - TypeScript monorepo with npm workspaces
 - 37 tests passing (policy, dedupe, router, MCP server, CLI)
@@ -69,8 +59,7 @@ actonce-spend start --mcp
 ## Known Limitations
 
 - Simulate mode currently evaluates policy but still logs; full dry-run without side effects coming in v0.2.0
-- Telegram webhook supports single user/channel only; multi-user routing in Pro dashboard
-- HTTP REST API reserved for Pro tier; free tier is MCP + CLI only
+- Telegram webhook supports single user/channel only
 
 ---
 
@@ -80,7 +69,8 @@ actonce-spend start --mcp
 - [ ] `get_policy_summary` MCP tool for agent self-checking
 - [ ] Webhook Guard integration (duplicate prevention for Stripe sellers)
 - [ ] Enhanced fraud signals (merchant risk scoring)
-- [ ] Pro dashboard alpha (waitlist opening)
+
+A hosted version of the gateway with shared team dashboard and approval workflows is available separately at [spend.actonceapi.com](https://spend.actonceapi.com). Its roadmap is maintained out-of-band of this OSS repo.
 
 ---
 

@@ -24,8 +24,6 @@ npm install -g @actonce/spend-gateway
 actonce-spend init
 ```
 
-![CLI Demo](docs/demo.gif)
-
 Edit `actonce-policy.yaml` to set your limits. Then start the MCP server:
 
 ```bash
@@ -168,23 +166,9 @@ See [`docs/openclaw-setup.md`](docs/openclaw-setup.md) for the full walkthrough.
 
 ---
 
-## Free vs Pro
+## Hosted Service
 
-| Feature | Free | Pro |
-|--------|------|-----|
-| Local policy engine | Yes | Yes |
-| MCP server + CLI | Yes | Yes |
-| Duplicate detection | Yes | Yes |
-| File-based approval queue | Yes | Yes |
-| Telegram/Slack approval alerts (1 user) | Yes | Yes |
-| Dry-run / simulate mode | Yes | Yes |
-| HTTP REST API | No | Yes |
-| Multi-user approval routing | No | Yes |
-| Team dashboard + analytics | No | Yes |
-| Advanced fraud signals | No | Yes |
-| Priority support | No | Yes |
-
-**Pro:** $24/month per user. **Team:** $99/month. **Business:** $299/month. [View plans](https://actonceapi.com/pricing)
+This gateway runs locally and is free forever under MIT. If you'd like a hosted version with a shared team dashboard, approval workflows, and audit logs — see [spend.actonceapi.com](https://spend.actonceapi.com). Hosted plans are a separate commercial product and their code lives in a separate repo.
 
 ---
 
@@ -192,7 +176,6 @@ See [`docs/openclaw-setup.md`](docs/openclaw-setup.md) for the full walkthrough.
 
 - [`docs/quickstart.md`](docs/quickstart.md) — 5-minute getting started
 - [`docs/openclaw-setup.md`](docs/openclaw-setup.md) — Add the MCP server to OpenClaw
-- [`docs/stripe-link-setup.md`](docs/stripe-link-setup.md) — Connect Stripe Link CLI for payments
 - [`docs/policy-reference.md`](docs/policy-reference.md) — Complete policy file reference
 
 ---
@@ -204,4 +187,3 @@ MIT. See [LICENSE](LICENSE).
 ---
 
 Built by [ActOnce](https://actonceapi.com). Questions? Open an issue or email hello@actonceapi.com.
-# CI trigger
